@@ -1,0 +1,10 @@
+{
+    "uid": "f3f95949-0de2-480a-98af-2fafd0f493f6",
+    "event": "order.approved",
+    "data": {
+        "order_id": "15613",
+        "order_code": "25TÂM+THỦY+(+ĐƠN+NỢ+)NU-NV12"
+    },
+    "secret_key": "test17052023_secret",
+    "domain": "thuongmai.getflycrm.com"
+}

@@ -1,0 +1,8 @@
+{
+    "uid": "f3f95949-0de2-480a-98af-2fafd0f493f6",
+    "event": "customer.created",
+    "data": {
+        "account_id": 10462
+    },
+    "domain": "demo.getflycrm.com"
+}

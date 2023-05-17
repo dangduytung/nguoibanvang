@@ -1,0 +1,4 @@
+
+uid=fc0f3d73-0e70-40df-b6d6-dcda9fa7096e&event=order.approved&data%5Border_id%5D=15613&data%5Border_code%5D=25T%C3%82M+TH%E1%BB%A6Y+%28+%C4%90%C6%A0N+N%E1%BB%A2+%29NU-NV12&secret_key=test17052023_secret&domain=thuongmai.getflycrm.com
+
+uid=fc0f3d73-0e70-40df-b6d6-dcda9fa7096e&event=order.approved&data[order_id]=15613&data[order_code]=25TÂM+THỦY+(+ĐƠN+NỢ+)NU-NV12&secret_key=test17052023_secret&domain=thuongmai.getflycrm.com
