@@ -1,0 +1,41 @@
+{
+    "info":{
+       "account_id":"344",
+       "account_code":"KH0344",
+       "account_name":"Anh Vũ Minh",
+       "address":null,
+       "phone":"0123456789",
+       "email":null,
+       "website":null,
+       "birthday":null,
+       "description":"",
+       "relation_id":"55",
+       "revenue":"12003850000",
+       "account_type":"48",
+       "created_at":"2022-11-13 22:26:40",
+       "account_source":"Facebook (Đã xóa)",
+       "account_manager":"1",
+       "province_name":null,
+       "district_name":null,
+       "country_name":"Việt Nam",
+       "industry_name":"",
+       "co_so":null,
+       "ngay_mua_hang_lan_cuoi":null,
+       "san_pham_trong_don_hang":null,
+       "dia_chi_giao_hang":null,
+       "ngay_hoan_thanh_don_hang":null,
+       "can_cuoc_cong_dan":null,
+       "ma_khach_hang":null
+    },
+    "contacts":[
+       {
+          "contact_id":"353",
+          "first_name":"Anh Vũ Minh Tâm",
+          "last_name":null,
+          "phone_mobile":"0123456789",
+          "email":null,
+          "description":"",
+          "title":""
+       }
+    ]
+ }

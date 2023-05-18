@@ -1,34 +1,38 @@
-require('dotenv').config()
 // const jwt = require('jsonwebtoken');
 const log = require('winston-log-lite')(module)
+const Config = require('../config/Config')
 
-const GETFLY_API_KEY = process.env.GETFLY_API_KEY
-const GETFLY_DOMAIN = process.env.GETFLY_DOMAIN
-const GETFLY_WEBHOOK_SECRET_KEY = process.env.GETFLY_WEBHOOK_SECRET_KEY
+const GF_API_KEY = Config.GF_API_KEY
+const GF_DOMAIN = Config.GF_DOMAIN
+const GF_WEBHOOK_SECRET_KEY = Config.GF_WEBHOOK_SECRET_KEY
 
 module.exports = (req, res, next) => {
   try {
 
     /// Print logs (for test)
+    log.info('----------')
+    log.info('method ' + req.method)
     log.info('headers ' + JSON.stringify(req.headers))
-    console.log('body', req.body)
     log.info('body ' + JSON.stringify(req.body))
+    log.info('----------')
+    
+    console.log('body', req.body)
 
-    /// Check X-API-KEY
-    const api_key = req.headers['x-api-key']
-    log.info('x-api-key ' + api_key)
-    if (api_key != GETFLY_API_KEY) {
-      res.status(401).json({
-        error: new Error('Invalid x-api-key').message
-      });
-      return
-    }
+    /// Check X-API-KEY (no check)
+    // const api_key = req.headers['x-api-key']
+    // log.info('x-api-key ' + api_key)
+    // if (api_key != GF_API_KEY) {
+    //   res.status(401).json({
+    //     error: new Error('Invalid x-api-key').message
+    //   });
+    //   return
+    // }
 
     /// Check domain, secret_key
     const { domain, secret_key } = req.body
     log.info('domain ' + domain)
     log.info('secret_key ' + secret_key)
-    if (domain != GETFLY_DOMAIN || secret_key != GETFLY_WEBHOOK_SECRET_KEY) {
+    if (domain != GF_DOMAIN || secret_key != GF_WEBHOOK_SECRET_KEY) {
       res.status(401).json({
         error: new Error('Invalid domain or secret_key').message
       });

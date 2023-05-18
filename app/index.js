@@ -1,11 +1,13 @@
+require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
 // const cors = require('cors');
+const log = require('winston-log-lite')(module)
 
 const router = express.Router();
 const app = express();
 
-const port = 3001;
+const port = 3000;
 
 // app.use(cors())
 
@@ -18,7 +20,8 @@ app.use(bodyParser.json());
 const auth = require('./middleware/auth');
 
 const mainCtrl = require('./controllers/MainController');
-router.post('', auth, mainCtrl.postGetFlyWebhook)
+router.get('/', mainCtrl.home)
+router.post('/', auth, mainCtrl.postGFWebhook)
 
 const testCtrl = require('./controllers/TestController');
 router.get('/test', auth, testCtrl.getTest);
@@ -30,6 +33,8 @@ app.use("/", router);
 
 // Listen on port
 app.listen(port, () => {
+  log.info(`Server is running on port ${port}`)
+  
   console.log(`Server is running on port ${port}
   Visit http://localhost:${port}`);
 });
