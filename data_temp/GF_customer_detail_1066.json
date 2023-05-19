@@ -1,0 +1,41 @@
+{
+    "info":{
+       "account_id":"1066",
+       "account_code":"KH-NPP618",
+       "account_name":"Thanh Hương",
+       "address":"864 NGUYỄN TẤT THÀNH- THỦY CHÂU  -  HƯƠNG THỦY",
+       "phone":null,
+       "email":null,
+       "website":null,
+       "birthday":null,
+       "description":"",
+       "relation_id":"1",
+       "revenue":"788440",
+       "account_type":"0",
+       "created_at":"2023-04-07 08:45:06",
+       "account_source":"",
+       "account_manager":"0",
+       "province_name":null,
+       "district_name":null,
+       "country_name":"Việt Nam",
+       "industry_name":"",
+       "co_so":null,
+       "ngay_mua_hang_lan_cuoi":null,
+       "san_pham_trong_don_hang":null,
+       "dia_chi_giao_hang":null,
+       "ngay_hoan_thanh_don_hang":null,
+       "can_cuoc_cong_dan":null,
+       "ma_khach_hang":null
+    },
+    "contacts":[
+       {
+          "contact_id":"1086",
+          "first_name":"Thanh Hương",
+          "last_name":null,
+          "phone_mobile":null,
+          "email":null,
+          "description":null,
+          "title":null
+       }
+    ]
+ }
