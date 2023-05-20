@@ -15,8 +15,8 @@ module.exports = (req, res, next) => {
     log.info('headers ' + JSON.stringify(req.headers))
     log.info('body ' + JSON.stringify(req.body))
     log.info('----------')
-    
-    console.log('body', req.body)
+
+    // console.log('body', req.body)
 
     /// Check X-API-KEY (no check)
     // const api_key = req.headers['x-api-key']
@@ -33,6 +33,7 @@ module.exports = (req, res, next) => {
     log.info('domain ' + domain)
     log.info('secret_key ' + secret_key)
     if (domain != GF_DOMAIN || secret_key != GF_WEBHOOK_SECRET_KEY) {
+      log.warn('Invalid domain or secret_key')
       res.status(401).json({
         error: new Error('Invalid domain or secret_key').message
       });
@@ -41,8 +42,9 @@ module.exports = (req, res, next) => {
 
     next();
 
-  } catch {
-    res.status(401).json({
+  } catch (error) {
+    log.error('Error ' + error)
+    res.status(400).json({
       error: new Error('Invalid request!').message
     });
   }

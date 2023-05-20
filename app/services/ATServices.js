@@ -1,34 +1,27 @@
 const axios = require('axios')
+const log = require('winston-log-lite')(module)
 const Config = require('../config/Config')
 const ConstantsAT = require('../config/ConstantsAT')
 
-async function AT_postback_conversations_post(data_inp) {
+async function AT_postback_conversations(method, data_req) {
+    log.info('AT request ~ method: ' + method)
+    log.info('AT request ~ data_req: ' + JSON.stringify(data_req))
+
     const config = {
-        method: 'post',
+        method: method,
         url: ConstantsAT.POSTBACK_CONVERSATIONS,
         headers: {
             Authorization: "Token " + Config.AT_API_KEY
         },
-        data: data_inp
+        data: data_req
     }
 
     let res = await axios(config)
-    return res.data
+    let data_res = res.data
+
+    log.info('AT response ~ data_res: ' + JSON.stringify(data_res))
+
+    return data_res
 }
 
-async function AT_postback_conversations_put(data_inp) {
-    const config = {
-        method: 'put',
-        url: ConstantsAT.POSTBACK_CONVERSATIONS,
-        headers: {
-            Authorization: "Token " + Config.AT_API_KEY
-        },
-        data: data_inp
-    }
-
-    let res = await axios(config)
-    return res.data
-}
-
-module.exports.AT_postback_conversations_post = AT_postback_conversations_post;
-module.exports.AT_postback_conversations_put = AT_postback_conversations_put;
+module.exports.AT_postback_conversations = AT_postback_conversations;
