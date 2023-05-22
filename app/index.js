@@ -9,6 +9,8 @@ const app = express();
 
 const port = 3000;
 
+log.info('Environment variables: ' + JSON.stringify(process.env))
+
 // app.use(cors())
 
 // Here we are configuring express to use body-parser as middle-ware.
